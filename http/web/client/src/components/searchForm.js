@@ -7,9 +7,9 @@ function SearchForm(props) {
                 value={props.search}
                 onChange={props.handleInputChange}
                 type="text"
-                placeholder="Search name"
+                placeholder="Search title"
             />
-            <button onClick={props.handleFormSubmit}>Submit</button>
+            <button onClick={props.handleFormSubmit}>Reset</button>
         </form>
     );
 }

@@ -9,19 +9,20 @@ import JobRow from "./components/JobRow.js";
 class Homepage extends React.Component {
 
   state = {
-    jobList: [],
+    // jobList: [],
     searched: "",
     toBeSearched: []
   }
 
   componentDidMount() {
     this.handleGetSavedJobs();
-    console.log("state"+this.state.jobList)
+    // console.log("state"+this.state.jobList)
   }
 
   handleGetSavedJobs = () => {
     getSavedJobs().then((resp) => {
-      this.setState({ jobList: resp.data })
+      // this.setState({ jobList: resp.data })
+      this.setState({ toBeSearched: resp.data })
     }).catch(err => console.log(err));
   }
 
@@ -31,17 +32,27 @@ class Homepage extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.setState({
-      searched: ""
-    });
+    
+      this.handleGetSavedJobs()
+      this.setState({
+        searched: ""
+        // jobList: this.state.toBeSearched
+      });
+    
   };
 
   handleInputChange = event => {
     const { value } = event.target;
-    this.setState({
-      searched: value,
-      toBeSearched: this.state.jobList.filter(job => job.title.match(value))
-    });
+    console.log("value ", event.targer)
+    // if(value === ""){
+    //   this.handleGetSavedJobs()
+    // }else{
+      this.setState({
+        searched: value,
+        // toBeSearched: this.state.jobList.filter(job => job.title.match(value))
+        toBeSearched: this.state.toBeSearched.filter(job => job.title.match(value))
+      });
+    // }
   };
 
 
@@ -62,10 +73,12 @@ class Homepage extends React.Component {
           handleInputChange={this.handleInputChange}
         />
         <div className="job-area text-center">
-          {!this.state.jobList ? (
+          {/* {!this.state.jobList ? ( */}
+          {!this.state.toBeSearched ? (
             <h2 className="empty-jobs">No jobs added yet. Add a job to begin!</h2>
           ) : (
-              this.state.jobList.map(job => {
+              // this.state.jobList.map(job => {
+                this.state.toBeSearched.map(job => {
                 return (
                   <JobRow
                     key={job._id}
