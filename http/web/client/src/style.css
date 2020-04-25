@@ -8,7 +8,7 @@ body {
     align-items: center;
     padding: 1%;
     transition: all 0.75s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 8px solid orangered;
     color: rgb(255, 179, 38);
 }
 
@@ -59,15 +59,81 @@ body {
     border: 5px solid rgb(255, 179, 38);
 }
 
+.state-holder {
+    width: 100%;
+    height: 50px;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.state-title {
+    font-size: 2em;
+    letter-spacing: 0.0625em;
+    width: 27.5%;
+    height: 90%;
+    color: white;
+    border-left: 8px solid white;
+    border-right: 8px solid white;
+    margin-left: 3.5%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.state-item {
+    font-size: 2em;
+    letter-spacing: 0.0625em;
+    width: 9.5%;
+    height: 90%;
+    color: white;
+    border-right: 8px solid white;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.state-note {
+    font-size: 2em;
+    letter-spacing: 0.0625em;
+    width: 27.5%;
+    height: 90%;
+    color: white;
+    border-right: 8px solid white;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.state-followup {
+    font-size: 2em;
+    letter-spacing: 0.0625em;
+    width: 18%;
+    height: 90%;
+    color: white;
+    border-right: 8px solid white;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
 .job-area {
     overflow: auto;
-    height: 760px;
+    height: 700px;
     justify-content: center;
     margin: 1%;
     border-radius: 5px;
     text-align: center;
     background-color: white;
-    border-bottom: 8px dotted orange;
+    border-bottom: 8px solid orangered;
+    border-top: 8px solid orangered;
 }
 
 .empty-jobs {
