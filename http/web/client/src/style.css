@@ -1,0 +1,32 @@
+.my-nav {
+    border-bottom: 3px solid silver;
+    background-color: white;
+    text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
+    margin-bottom: 1%;
+}
+
+.nav-title {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    color: black;
+}
+
+.job-area {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: auto;
+    height: 900px;
+    padding: 1%;
+    margin: 2%;
+    background-color: white;
+}
+
+.empty-jobs {
+    font-family: 'Rock Salt', cursive;
+    size: 3em;
+    text-align: center;
+}
