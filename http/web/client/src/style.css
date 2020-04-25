@@ -8,7 +8,7 @@ body {
     align-items: center;
     padding: 1%;
     transition: all 0.75s ease;
-    border-bottom: 8px solid orangered;
+    border-bottom: 3px solid transparent;
     color: rgb(255, 179, 38);
 }
 
@@ -132,8 +132,6 @@ body {
     border-radius: 5px;
     text-align: center;
     background-color: white;
-    border-bottom: 8px solid orangered;
-    border-top: 8px solid orangered;
 }
 
 .empty-jobs {
@@ -150,7 +148,7 @@ body {
     margin: 2%;
     align-items: center;
     transition: all 0.40s ease;
-    background-color: rgb(255, 179, 38);
+    background-color: burlywood;
     color: white;
 }
 
@@ -199,4 +197,20 @@ body {
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 0.5%;
+}
+
+.job-end {
+    font-size: 1.5em;
+    letter-spacing: 0.0625em;
+    margin-right: 0.5%;
+    width: 20%;
+    height: 90%;
+    border: 4px solid white;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
