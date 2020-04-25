@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import "../style.css";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { saveJob, getSavedJobs, removeJob } from "../utils/API";
+import { saveJob, getSavedJobs } from "../utils/API";
 
 function JobModal(props) {
     const [show, setShow] = useState(false);
