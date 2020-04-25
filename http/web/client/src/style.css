@@ -40,6 +40,29 @@ body {
     justify-content: left;
 }
 
+.search-form {
+    border: 2px outset orange;
+    padding: 1%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+}
+
+.form-input {
+    border-radius: 5px;
+    text-align: center;
+}
+
+.reset-button {
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-family: monospace;
+    color: white;
+    background-color: rgb(255, 179, 38);
+}
+
 .job-button {
     height: 70px;
     width: 200px;
@@ -148,7 +171,7 @@ body {
     margin: 2%;
     align-items: center;
     transition: all 0.40s ease;
-    background-color: burlywood;
+    background-color: rgb(247, 189, 114);
     color: white;
 }
 

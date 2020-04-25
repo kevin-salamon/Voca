@@ -2,14 +2,15 @@ import React from "react";
 
 function SearchForm(props) {
     return (
-        <form className="form offset-md-3">
+        <form className="form offset-md-3 search-form">
             <input
+                className="form-input"
                 value={props.search}
                 onChange={props.handleInputChange}
                 type="text"
-                placeholder="Search title"
+                placeholder="Search"
             />
-            <button onClick={props.handleFormSubmit}>Reset</button>
+            <button className="reset-button" onClick={props.handleFormSubmit}>Reset</button>
         </form>
     );
 }
