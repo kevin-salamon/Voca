@@ -3,6 +3,8 @@ import "./style.css";
 import { saveJob, getSavedJobs, removeJob } from "./utils/API";
 import JobModal from "./components/JobModal";
 import JobRow from "./components/JobRow.js";
+import MaterialTable from 'material-table';
+
 
 class Homepage extends React.Component {
 
@@ -28,9 +30,11 @@ class Homepage extends React.Component {
     render() {
       return (
         <div>
-          <nav className="nav my-nav">
-            <div className="nav-title">Voca</div>
-            <div className="nav-subtitle">A simple app for a simpler job search.</div>
+          <nav className="navbar my-nav">
+            <div className="title-holder">
+              <div className="nav-title">Voca</div>
+              <div className="nav-subtitle">A simple app for a simpler job search.</div>
+            </div>
             <JobModal />
           </nav>
           <div className="job-area text-center"> 
