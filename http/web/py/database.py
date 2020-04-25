@@ -12,7 +12,7 @@ def storeJob(job_application):
     return result.acknowledged, result.inserted_id.__str__()
 
 def getJobs():
-    return db.find()
+    return list(db.find())
 
 def deleteJob(job_id):
     result = db.restaurants.delete_many("job_id")
