@@ -12,7 +12,8 @@ class Homepage extends React.Component {
   state = {
     // jobList: [],
     searched: "",
-    toBeSearched: []
+    toBeSearched: [],
+    date: new Date()
   }
 
   componentDidMount() {
@@ -55,7 +56,10 @@ class Homepage extends React.Component {
     });
     // }
   };
+  onChange = date => {
 
+    this.setState({ date: date })
+  }
 
   render() {
     console.log(this.state)
@@ -95,6 +99,8 @@ class Homepage extends React.Component {
                     location={job.location}
                     notes={job.note}
                     followup={job.followDate}
+                    onChange={this.onChange}
+                    date={this.state.date}
                   />
                 );
               })

@@ -1,6 +1,8 @@
 import React from 'react';
 import "../style.css";
 import { removeJob } from "../utils/API";
+import DatePicker from 'react-date-picker';
+
 
 const JobRow = (props) => {
     return (
@@ -10,7 +12,10 @@ const JobRow = (props) => {
             <h3 className="job-item">{props.location}</h3>
             <h3 className="job-notes">{props.notes}</h3>
 
-            <h3 className="job-end">JUSTIN HERE</h3>
+            <DatePicker
+                onChange={props.onChange}
+                value={props.date}
+            />
 
         </div>
     );
