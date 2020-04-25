@@ -3,6 +3,8 @@ import "./style.css";
 import { saveJob, getSavedJobs, removeJob } from "./utils/API";
 import JobModal from "./components/JobModal";
 import JobRow from "./components/JobRow.js";
+import MaterialTable from 'material-table';
+
 
 class Homepage extends React.Component {
 
@@ -28,26 +30,30 @@ class Homepage extends React.Component {
     render() {
       return (
         <div>
-          <nav className="nav my-nav">
-            <div className="nav-title">Voca</div>
-            <div className="nav-subtitle">A simple app for a simpler job search.</div>
+          <nav className="navbar my-nav">
+            <div className="title-holder">
+              <div className="nav-title">Voca</div>
+              <div className="nav-subtitle">A simple app for a simpler job search.</div>
+            </div>
             <JobModal />
           </nav>
-          <div className="job-area text-center"> 
-            <JobRow
-            title="Test Title"
-            employer="Test Employer"
-            location="Test Location"
-            notes="GIVE ME THE MEATS"
-            followup="Test Tomorrow"
-            />
-            <JobRow
-            title="Fry Cook"
-            employer="Krusty Krab"
-            location="Bikini Bottom"
-            notes="STILL NO PICKLESSSSS"
-            followup="everyday"
-            />
+          <div className="job-area text-center">
+          {!this.state.jobList ? (
+                        <h2 className="empty-jobs">No jobs added yet. Add a job to begin!</h2>
+                    ) : (
+                        this.state.jobList.map(job => {
+                            return (
+                              <JobRow
+                                key={job._id}
+                                title={job.title}
+                                employer={job.employer}
+                                location={job.location}
+                                notes={job.note}
+                                followup={job.followDate}
+                                />
+                            );
+                        })
+                    )}
           </div>
         </div>
       );
