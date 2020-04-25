@@ -39,13 +39,13 @@ function JobModal(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="job-button" onClick={handleShow}>
           Add Job
         </Button>
   
         <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title style={{fontFamily: "monospace", fontSize: "30px"}}>Add Dish:</Modal.Title>
+                    <Modal.Title style={{fontFamily: "monospace", fontSize: "30px"}}>Add Job:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form>
