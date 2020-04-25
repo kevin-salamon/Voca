@@ -39,9 +39,9 @@ function JobModal(props) {
   
     return (
       <>
-        <Button variant="primary" className="job-button" onClick={handleShow}>
+        <button variant="primary" className="job-button" onClick={handleShow}>
           Add Job
-        </Button>
+        </button>
   
         <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
