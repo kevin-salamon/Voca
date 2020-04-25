@@ -39,7 +39,7 @@ function JobModal(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="job-button" onClick={handleShow}>
           Add Job
         </Button>
   

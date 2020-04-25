@@ -1,27 +1,43 @@
+body {
+    background-color: silver;
+}
+
 .my-nav {
-    border-bottom: 3px solid silver;
+    border-bottom: 4px solid black;
     background-color: white;
-    text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
     margin-bottom: 1%;
+    align-items: center;
+    padding: 1%;
 }
 
 .nav-title {
-    font-size: 2em;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.1em;
-    font-weight: bold;
+    font-size: 3em;
+    letter-spacing: 0.2em;
     color: black;
+    font-family: 'Lobster', cursive;
+    text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
     margin-left: 4%;
+    margin-right: 2%;
+}
+
+.nav-subtitle {
+    font-family: 'Courgette', cursive;
+    font-size: 1.2em;
+    color: gray;
+    margin-right: 30%;
+}
+
+.job-button {
+
 }
 
 .job-area {
-    display: flex;
-    justify-content: center;
     border: 4px solid black;
     overflow: auto;
-    height: 900px;
-    padding: 1%;
+    height: 760px;
+    justify-content: center;
     margin: 2%;
+    text-align: center;
     background-color: white;
 }
 
@@ -34,12 +50,11 @@
 .job-row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     padding: 1%;
-    width: 100%;
+    width: 98%;
     height: 100px;
     border: 3px solid black;
-    margin: 0.5%;
+    margin: 1%;
     align-items: center;
     justify-content: center;
     box-shadow: 3px 3px 1px black;
