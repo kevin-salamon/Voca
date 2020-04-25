@@ -1,8 +1,14 @@
 from pymongo import MongoClient
 from py.model.job import JobApplication
 from bson import ObjectId
+import json
 
-MONGODB_URL = 'mongodb+srv://<user>:<password>@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
+data = {}
+with open("db_user.json", r) as f:
+    data = json.load(f)
+
+
+MONGODB_URL = f'mongodb+srv://{data.get("username", "")}:{data.get("password", "")}@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
 client = MongoClient(MONGODB_URL)
 
 db = client['JTrackr']['jobs']
