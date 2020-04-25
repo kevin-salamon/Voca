@@ -37,21 +37,23 @@ class Homepage extends React.Component {
             </div>
             <JobModal />
           </nav>
-          <div className="job-area text-center"> 
-            <JobRow
-            title="Test Title"
-            employer="Test Employer"
-            location="Test Location"
-            notes="GIVE ME THE MEATS"
-            followup="Test Tomorrow"
-            />
-            <JobRow
-            title="Fry Cook"
-            employer="Krusty Krab"
-            location="Bikini Bottom"
-            notes="STILL NO PICKLESSSSS"
-            followup="everyday"
-            />
+          <div className="job-area text-center">
+          {!this.state.jobList ? (
+                        <h2 className="empty-jobs">No jobs added yet. Add a job to begin!</h2>
+                    ) : (
+                        this.state.jobList.map(job => {
+                            return (
+                              <JobRow
+                                key={job._id}
+                                title={job.title}
+                                employer={job.employer}
+                                location={job.location}
+                                notes={job.note}
+                                followup={job.followDate}
+                                />
+                            );
+                        })
+                    )}
           </div>
         </div>
       );
