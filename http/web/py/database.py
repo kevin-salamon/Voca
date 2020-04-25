@@ -1,10 +1,11 @@
 from pymongo import MongoClient
-from py.model.job import JobApplication
+from .model.job import JobApplication
 from bson import ObjectId
 import json
+import os
 
 data = {}
-with open("db_user.json", "r") as f:
+with open(os.path.join(os.path.dirname(__file__), "db_user.json"), "r") as f:
     data = json.load(f)
 
 MONGODB_URL = f'mongodb+srv://{data.get("username", "")}:{data.get("password", "")}@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'

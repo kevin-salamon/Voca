@@ -17,7 +17,6 @@ class Homepage extends React.Component {
     }
 
     handleGetSavedJobs = () => {
-      console.log("Prior" + this.state.jobList)
       getSavedJobs().then((resp) => {
           this.setState({jobList: resp.data})
       }).catch(err => console.log(err));
