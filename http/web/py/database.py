@@ -1,7 +1,8 @@
 from pymongo import MongoClient
 from py.model.job import JobApplication
+from bson import ObjectId
 
-MONGODB_URL = 'mongodb+srv://salmonTimo:<password>@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
+MONGODB_URL = 'mongodb+srv://<user>:<password>@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
 client = MongoClient(MONGODB_URL)
 
 db = client['JTrackr']['jobs']
@@ -15,5 +16,5 @@ def getJobs():
     return list(db.find())
 
 def deleteJob(job_id):
-    result = db.restaurants.delete_many("job_id")
+    result = db.restaurants.delete_many({"_id": ObjectId(job_id)})
     return result
