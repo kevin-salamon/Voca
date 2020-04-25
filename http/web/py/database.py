@@ -4,9 +4,8 @@ from bson import ObjectId
 import json
 
 data = {}
-with open("db_user.json", r) as f:
+with open("db_user.json", "r") as f:
     data = json.load(f)
-
 
 MONGODB_URL = f'mongodb+srv://{data.get("username", "")}:{data.get("password", "")}@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
 client = MongoClient(MONGODB_URL)
