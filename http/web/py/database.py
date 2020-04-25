@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from py.model.job import JobApplication
 
-MONGODB_URL = 'mongodb+srv://salmonTimo:Mongo%20Horse%20Dawg22@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
+MONGODB_URL = 'mongodb+srv://salmonTimo:<password>@cluster0-h61kz.mongodb.net/test?retryWrites=true&w=majority'
 client = MongoClient(MONGODB_URL)
 
 db = client['JTrackr']['jobs']
