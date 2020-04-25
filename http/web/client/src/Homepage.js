@@ -4,6 +4,7 @@ import SearchForm from "./components/searchForm"
 import { saveJob, getSavedJobs, removeJob } from "./utils/API";
 import JobModal from "./components/JobModal";
 import JobRow from "./components/JobRow.js";
+import DatePicker from 'react-date-picker';
 
 
 class Homepage extends React.Component {
@@ -32,13 +33,13 @@ class Homepage extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    
-      this.handleGetSavedJobs()
-      this.setState({
-        searched: ""
-        // jobList: this.state.toBeSearched
-      });
-    
+
+    this.handleGetSavedJobs()
+    this.setState({
+      searched: ""
+      // jobList: this.state.toBeSearched
+    });
+
   };
 
   handleInputChange = event => {
@@ -47,11 +48,11 @@ class Homepage extends React.Component {
     // if(value === ""){
     //   this.handleGetSavedJobs()
     // }else{
-      this.setState({
-        searched: value,
-        // toBeSearched: this.state.jobList.filter(job => job.title.match(value))
-        toBeSearched: this.state.toBeSearched.filter(job => job.title.match(value))
-      });
+    this.setState({
+      searched: value,
+      // toBeSearched: this.state.jobList.filter(job => job.title.match(value))
+      toBeSearched: this.state.toBeSearched.filter(job => job.title.match(value))
+    });
     // }
   };
 
@@ -85,7 +86,7 @@ class Homepage extends React.Component {
             <h2 className="empty-jobs">No jobs added yet. Add a job to begin!</h2>
           ) : (
               // this.state.jobList.map(job => {
-                this.state.toBeSearched.map(job => {
+              this.state.toBeSearched.map(job => {
                 return (
                   <JobRow
                     key={job._id}
