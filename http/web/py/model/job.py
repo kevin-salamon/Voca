@@ -18,7 +18,7 @@ class JobApplication:
     title: str
     employer: str
     location: str = ""
-    stage: str = ""
+    stage: str = "waiting"
     note: str = ""
     followDate: str = ""
     dates: Collection[Event] = tuple()

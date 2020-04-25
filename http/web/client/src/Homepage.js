@@ -8,8 +8,8 @@ import MaterialTable from 'material-table';
 
 class Homepage extends React.Component {
 
-    state= {
-      joblist: [],
+    state = {
+      jobList: [],
     }
 
     componentDidMount() {
@@ -17,8 +17,9 @@ class Homepage extends React.Component {
     }
 
     handleGetSavedJobs = () => {
-      getSavedJobs().then(({ data: jobList }) => {
-          this.setState({jobList})
+      console.log("Prior" + this.state.jobList)
+      getSavedJobs().then((resp) => {
+          this.setState({jobList: resp.data})
       }).catch(err => console.log(err));
     }
 

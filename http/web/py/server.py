@@ -18,7 +18,7 @@ def savejobs():
 
 @app.route('/api/jobs', methods=['GET'])
 def getJobs():
-    return jsonify({'jobs': database.getJobs()})
+    return jsonify(database.getJobs())
 
 @app.route('/api/jobs/<int:job_id>', methods=['DELETE'])
 def deleteJob(job_id):
