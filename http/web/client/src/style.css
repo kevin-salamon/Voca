@@ -9,11 +9,11 @@ body {
     padding: 1%;
     transition: all 0.75s ease;
     border-bottom: 3px solid transparent;
+    color: rgb(255, 179, 38);
 }
 
 .my-nav:hover {
-    background-color: rgb(8, 8, 180);
-    border-bottom: 3px solid white;
+
 }
 
 .title-holder {
@@ -24,7 +24,6 @@ body {
 
 .nav-title {
     font-size: 3em;
-    color: rgb(255, 179, 38);
     letter-spacing: 0.2em;
     font-family: 'Lobster', cursive;
     margin-left: 4%;
@@ -37,7 +36,6 @@ body {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
     margin-top: 1%;
-    color: white;
     width: 400px;
     justify-content: left;
 }
@@ -58,17 +56,18 @@ body {
 .job-button:hover {
     background-color: rgb(255, 179, 38);
     color: white;
-    border: 5px solid white;
+    border: 5px solid rgb(255, 179, 38);
 }
 
 .job-area {
     overflow: auto;
     height: 760px;
     justify-content: center;
-    margin: 2%;
+    margin: 1%;
     border-radius: 5px;
     text-align: center;
     background-color: white;
+    border-bottom: 8px dotted orange;
 }
 
 .empty-jobs {
@@ -80,22 +79,58 @@ body {
 .job-row {
     display: flex;
     flex-direction: row;
-    padding: 1%;
-    width: 98%;
+    width: 96%;
     height: 100px;
-    border: 5px solid rgb(255, 179, 38);
-    border-radius: 6px;
-    margin: 1%;
+    margin: 2%;
     align-items: center;
-    justify-content: center;
     transition: all 0.40s ease;
+    background-color: rgb(255, 179, 38);
+    color: white;
 }
 
 .job-item {
-    width: 18%;
-    color: rgb(255, 179, 38);
+    font-size: 1.0em;
+    letter-spacing: 0.0625em;
+    width: 10%;
+    height: 90%;
+    border: 4px solid white;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.job-row:hover {
-    background-color: rgb(8, 8, 180);;
+.job-notes {
+    font-size: 0.8em;
+    letter-spacing: 0.0625em;
+    width: 30%;
+    height: 90%;
+    border: 4px solid white;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-title {
+    font-size: 1.5em;
+    letter-spacing: 0.0625em;
+    width: 30%;
+    height: 90%;
+    color: white;
+    border: 4px solid white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 0.5%;
 }
