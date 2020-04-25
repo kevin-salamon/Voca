@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from .model.job import JobApplication
+from .job import JobApplication
 from bson import ObjectId
 import json
 import os

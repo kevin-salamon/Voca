@@ -1,7 +1,7 @@
 import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from . import database
+from .model import database
 from .model.job import JobApplication
 from .model.helper import EnhancedJSONEncoder
 
