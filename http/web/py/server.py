@@ -1,9 +1,21 @@
 import json
+import atexit
+from multiprocessing import Process
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from .model import database
+from .model import sms
 from .model.job import JobApplication
 from .model.helper import EnhancedJSONEncoder
+
+background = Process(target=sms.smsDaemon)
+
+def close_running_threads():
+    background.join()
+    print("closing thread")
+atexit.register(close_running_threads)
+background.start()
+
+from .model import database
 
 app = Flask(__name__)
 CORS(app)

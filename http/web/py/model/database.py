@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import datetime
 from .job import JobApplication
 from bson import ObjectId
 import json
@@ -21,6 +22,11 @@ def storeJob(job_application):
 def getJobs():
     return list(db.find())
 
-def deleteJob(job_id):
+def deleteJob(db, job_id):
     result = db.restaurants.delete_many({"_id": ObjectId(job_id)})
     return result
+
+def getFollowUpsTomorrow():
+    start = datetime.datetime.now() + datetime.timedelta(days=1)
+    end = start + datetime.timedelta(days=1)
+    return db.find({'followupDate': {'$lt': end, '$gte': start}})
