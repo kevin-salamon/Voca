@@ -9,8 +9,9 @@ const JobRow = (props) => {
             <h3 className="job-item">{props.employer}</h3>
             <h3 className="job-item">{props.location}</h3>
             <h3 className="job-notes">{props.notes}</h3>
-            <h3 className="job-item">{props.followup}</h3>
-            <button className="job-item" style={{marginRight: "0.5%", fontSize: "1.5em"}}>📅</button>
+
+            <h3 className="job-end">JUSTIN HERE</h3>
+
         </div>
     );
 }
