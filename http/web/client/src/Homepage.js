@@ -9,8 +9,22 @@ class Homepage extends React.Component {
     state= {
       joblist: [],
     }
+
+    componentDidMount() {
+      this.handleGetSavedJobs();
+    }
+
+    handleGetSavedJobs = () => {
+      getSavedJobs().then(({ data: jobList }) => {
+          this.setState({jobList})
+      }).catch(err => console.log(err));
+    }
+
+    handleRemoveJob = jobId => {
+      removeJob(jobId).then(this.handleGetSavedJobs).catch(err => console.log(err));
+    }
   
-  
+
     render() {
       return (
         <div>
