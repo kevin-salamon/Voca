@@ -1,9 +1,9 @@
 import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import py.database as database
-from py.model.job import JobApplication
-from py.model.helper import EnhancedJSONEncoder
+from .model import database
+from .model.job import JobApplication
+from .model.helper import EnhancedJSONEncoder
 
 app = Flask(__name__)
 CORS(app)
