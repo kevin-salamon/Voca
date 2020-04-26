@@ -5,7 +5,7 @@ import { saveJob } from "../utils/API";
 
 function JobModal(props) {
     const [show, setShow] = useState(false);
-  
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -16,37 +16,37 @@ function JobModal(props) {
     const noteRef = useRef();
 
     function handleSubmit(event) {
-      event.preventDefault();
-      const newJob = {
-          title: titleRef.current.value,
-          employer: employerRef.current.value,
-          location: locationRef.current.value,
-          followDate: followUpRef.current.value,
-          note: noteRef.current.value
-      };
+        event.preventDefault();
+        const newJob = {
+            title: titleRef.current.value,
+            employer: employerRef.current.value,
+            location: locationRef.current.value,
+            followDate: followUpRef.current.value,
+            note: noteRef.current.value
+        };
 
-      console.log(newJob); 
-      saveJob(newJob)
-          .then(res => {
-              console.log(res)
-          });
-      
-      handleClose();
-      props.handleGetSavedJobs();
-    //   alert("Job Added");
-  }
-  
+        console.log(newJob);
+        saveJob(newJob)
+            .then(res => {
+                console.log(res)
+                props.handleGetSavedJobs();
+            });
+        
+        handleClose();
+        //   alert("Job Added");
+    }
+
     return (
-      <>
-        <button variant="primary" className="job-button" onClick={handleShow}>
-          Add Job
+        <>
+            <button variant="primary" className="job-button" onClick={handleShow}>
+                Add Job
         </button>
-  
-        <Modal show={show} onHide={handleClose}>
+
+            <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title className="modal-title">Add your new job application details below</Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{backgroundColor: "rgb(255, 179, 38)"}}>
+                <Modal.Body style={{ backgroundColor: "rgb(255, 179, 38)" }}>
                     <form>
                         <div className="form-group text-center">
                             <input
@@ -98,8 +98,8 @@ function JobModal(props) {
 
                 </Modal.Footer>
             </Modal>
-      </>
+        </>
     );
 }
-  
+
 export default JobModal;
