@@ -92,7 +92,6 @@ class Homepage extends React.Component {
           ) : (
               // this.state.jobList.map(job => {
               this.state.toBeSearched.map(job => {
-                console.log("Job ID " + job._id)
                 return (
                   <JobRow
                     key={job._id}
