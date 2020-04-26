@@ -30,7 +30,7 @@ function JobModal(props) {
 
     function handleInputChange(event){
         const { value } = event.target;
-        setnotes({...notes,[notes]: value})
+        setnotes({notes: value})
     }
 
     return (
@@ -59,8 +59,8 @@ function JobModal(props) {
                                 className="input"
                                 ref={noteRef}
                                 type="text"
-                                // value={props.notes}
-                                // onChange={handleInputChange}
+                                value={notes.notes}
+                                onChange={handleInputChange}
                                 style={{ width: "70%", height: "150px" }}
                             />
                         </div>
