@@ -21,9 +21,9 @@ const JobRow = (props) => {
 
         // let tempDate = JSON.stringify(importDate)
         let transDate = new Date(importDate)
-        console.log("transDate: ",transDate)
-        console.log("nowDate: ",nowDate.getDate())
-        diff = transDate.getDate() - nowDate.getDate()
+        console.log("transDate: ",transDate.getTime())
+        console.log("nowDate: ",nowDate.getTime())
+        diff = Math.floor((transDate.getTime() - nowDate.getTime())/1000/60/60/24)
         console.log("diff: ",diff)
     }
     calcDate(props.followup)
