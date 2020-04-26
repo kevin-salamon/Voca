@@ -185,6 +185,10 @@ body {
     background-color: transparent;
 }
 
+.state-followup:hover {
+    color: navy;
+}
+
 .job-area {
     overflow: auto;
     height: 700px;
