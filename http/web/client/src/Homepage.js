@@ -25,10 +25,10 @@ class Homepage extends React.Component {
   handleGetSavedJobs = () => {
     console.log("handleGetSavedJobs:")
     getSavedJobs().then((resp) => {
-      console.log("getSavedJobs:" + resp)
+      console.log("getSavedJobs:" + resp.data.length)
       // this.setState({ jobList: resp.data })
       this.setState({ toBeSearched: resp.data })
-      console.log("new state:" + this.state.toBeSearched)
+      // console.log("new state:" + this.state.toBeSearched)
     }).catch(err => console.log(err));
   }
 
@@ -97,6 +97,7 @@ class Homepage extends React.Component {
           ) : (
               // this.state.jobList.map(job => {
               this.state.toBeSearched.map(job => {
+
                 return (
                   <JobRow
                     key={job._id}
