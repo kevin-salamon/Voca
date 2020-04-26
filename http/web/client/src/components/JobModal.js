@@ -12,7 +12,6 @@ function JobModal(props) {
     const titleRef = useRef();
     const employerRef = useRef();
     const locationRef = useRef();
-    const followUpRef = useRef();
     const noteRef = useRef();
 
     function handleSubmit(event) {
@@ -71,7 +70,7 @@ function JobModal(props) {
                                 placeholder="Location"
                             />
                         </div>
-                        
+
                         <div className="form-group text-center">
                             <input
                                 className="input"

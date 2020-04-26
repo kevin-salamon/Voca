@@ -12,10 +12,6 @@ body {
     color: rgb(255, 179, 38);
 }
 
-.my-nav:hover {
-
-}
-
 .title-holder {
     display: flex;
     flex-direction: row;
@@ -65,7 +61,7 @@ body {
 
 .job-button {
     height: 70px;
-    width: 200px;
+    width: 300px;
     border-radius: 15px;
     border: 5px solid rgb(255, 179, 38);
     color: rgb(255, 179, 38);
@@ -74,6 +70,7 @@ body {
     font-size: 1.9em;
     font-family: 'Bebas Neue', cursive;
     transition: all 0.5s ease;
+    margin-left: 1%;
 }
 
 .job-button:hover {
@@ -140,7 +137,7 @@ body {
 }
 
 .state-item {
-    font-size: 2em;
+    font-size: 1.7em;
     letter-spacing: 0.0625em;
     width: 9.5%;
     height: 90%;
@@ -166,7 +163,7 @@ body {
 }
 
 .state-followup {
-    font-size: 2em;
+    font-size: 1.7em;
     letter-spacing: 0.0625em;
     width: 18%;
     height: 90%;
@@ -199,14 +196,13 @@ body {
     display: flex;
     flex-direction: row;
     width: 96%;
-    height: 100px;
+    height: 70px;
     margin: 2%;
     align-items: center;
     transition: all 0.40s ease;
-    background-color: darkgray;
+    background-color: orange;
     color: white;
     border-radius: 5px;
-    border: 4px solid black;
 }
 
 .job-item {
@@ -286,13 +282,79 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .remove-button {
     height: 100%;
     width: 100%;
-    font-size: 2em;
+    font-size: 1em;
     color: white;
     background-color: red;
     font-family: 'Bebas Neue', cursive;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.interactive-holder {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 600px) {
+    .search-form {
+        width: 50%;
+    }
+
+    .job-button {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+    
+    .state-item {
+        font-size: 20px;
+    }
+    
+    .state-holder {
+        height: 100px;
+    }
+
+}
+
+@media screen and (max-width: 1180px) {
+    .my-nav {
+        justify-content: center;
+        margin-left: auto;
+    }
+
+    .interactive-holder {
+        justify-content: left;
+    }
+
+    .state-title {
+        font-size: 2em;
+    }
+    
+    .state-item {
+        font-size: 1.3em;
+        align-self: center;
+    }
+    
+    .state-note {
+        font-size: 2em;
+    }
+    
+    .state-followup {
+        font-size: 1.4em;
+    }
+
+    .job-row {
+        height: 200px;
+    }
+
 }
