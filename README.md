@@ -1,11 +1,11 @@
 # Voca
 ![Logo, a stylized V in an orange circle](https://github.com/kevin-salamon/Voca/blob/master/android-chrome-192x192.png)
 
-An application for the hack:now hackathon.
+Designed for the 2020 Hacknow Calhacks hackathon for COVID-19 relief, this app will allow the user to simplify their job search through tracking of job stages. Uses React frontend and Flask backend.
 
 ## Project Description 
 
-Voca is a simple, streamlined, and user-friendly application that allows job seekers to keep track of their job applications, assign follow ups, and organize their job hunt in a single place. Users can search & filter their applications by title, employer, and more. Applications are color coded to indicate followup dates in the near future. We hope that this app will relieve some of the stress of simultaneously managing many disparate job applications.
+Voca allows job seekers to keep track of their job applications, assign follow ups, and organize their job hunt in a single place. Users can search & filter their applications by title, employer, and more. Applications are color coded to indicate followup dates in the near future. We hope that this app will relieve some of the stress of simultaneously managing many disparate job applications.
 
 ## Table of Contents 
 
@@ -27,12 +27,15 @@ Voca is a simple, streamlined, and user-friendly application that allows job see
 3. Axios
 
 ### Database
-MongoDB
+--MongoDB
 
 ### Front-End - React
 1. React-DOM
 2. React-Router-DOM
 3. React-Moment
+4. React-Date-Picker
+5. React-Bootstrap
+6. Material-Table
 
 ## Installation
 
