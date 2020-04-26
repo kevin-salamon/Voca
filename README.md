@@ -66,7 +66,7 @@ python -m flask run --port 4433
 
 Voca is a fully fleshed-out job application management app where job seekers can manage their job hunt in one place. Users can add their applications, organize by status (waiting response, pending onsite, etc.), and schedule follow up dates. Users can also declutter their job application list by using the search bar, which filters the list down to certain job titles, employers, and statuses. Our goal for this application is that users can store all their job applications in one easy, manageable web app throughout their application process.
 
-On launch, users enter a single page app where they are given the option to add a job. Upon selecting the job's title, employer, and any additional notes, the job files to a rolling job list. Users can then add additional jobs, modify the date of the next follow up with the calendar button, delete job applications using the delete button, or filter their job lists from the search bar. Click on the column headers (Title, Employer, ...) to filter the list alphabetically by that column.
+On launch, users enter a single page app where they are given the option to add a job. Upon selecting the job's title, employer, and any additional notes, the job files to a rolling job list. Users can then add additional jobs, modify the date of the next follow up with the calendar button, delete job applications using the delete button, or filter their job lists from the search bar. Click on the column headers (Title, Employer, ...) to sort the list alphabetically/date-wise by that column.
 
 ## Future Plans
 

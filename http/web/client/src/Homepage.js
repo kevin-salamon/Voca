@@ -132,7 +132,7 @@ class Homepage extends React.Component {
           <p className="state-item" onClick={this.sortByEmployer}>EMPLOYER</p>
           <p className="state-item" onClick={this.sortByLocation}>LOCATION</p>
           <p className="state-note">NOTES</p>
-          <p className="state-followup">FOLLOW-UP</p>
+          <p className="state-followup" onClick={this.handleGetSavedJobs}>FOLLOW-UP</p>
         </div>
         <div className="job-area text-center">
           {/* {!this.state.jobList ? ( */}
