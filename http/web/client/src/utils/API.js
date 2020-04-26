@@ -22,13 +22,10 @@ export const removeJob = jobId => {
   return axios.delete(FLASK_BASE_URI + `/api/jobs/${jobId}`);
 }
 
-export const updateJob = (jobId,newJobStatus) => {
-  console.log("Attempting to update data from below route:")
-  return axios.put(FLASK_BASE_URI + `/api/jobs/${jobId}`, newJobStatus)
-}
 
 export default {
   saveJob,
   getSavedJobs,
   removeJob,
+  updateJob
 }

@@ -35,6 +35,7 @@ class Homepage extends React.Component {
   handleRemoveJob = jobId => {
     removeJob(jobId).then(this.handleGetSavedJobs).catch(err => console.log(err));
   }
+  
   handleUpdateJob = (JobId, newJobStatus) => {
     updateJob(JobId, newJobStatus)
       .then(this.handleGetSavedJobs)
