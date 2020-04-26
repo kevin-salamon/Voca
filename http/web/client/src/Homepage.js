@@ -82,14 +82,16 @@ class Homepage extends React.Component {
             <div className="nav-title">Voca</div>
             <div className="nav-subtitle">A simple app for a simpler job search.</div>
           </div>
-          <SearchForm
-            search={this.state.searched}
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-          />
-          <JobModal
-            handleGetSavedJobs={this.handleGetSavedJobs}
-          />
+          <div className="interactive-holder">
+            <SearchForm
+              search={this.state.searched}
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
+            <JobModal
+              handleGetSavedJobs={this.handleGetSavedJobs}
+            />
+          </div>
         </nav>
         <div className="state-holder">
           <p className="state-title">TITLE</p>
