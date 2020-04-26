@@ -18,9 +18,8 @@ def storeJob(job_application):
     result = db.insert_one(d)
     return result.acknowledged, result.inserted_id.__str__()
 
-def updateJob(job_id, job_application):
-    d = job_application.to_dict()
-    result = db.update_one({'_id': ObjectId(job_id)}, {'$set': d})
+def updateJob(job_id, updates):
+    result = db.update_one({'_id': ObjectId(job_id)}, {'$set': updates})
     return result.acknowledged
 
 def getJobs():

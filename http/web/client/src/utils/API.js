@@ -25,6 +25,7 @@ export const removeJob = jobId => {
 
 export default {
   saveJob,
+  updateJob,
   getSavedJobs,
   removeJob,
   updateJob
