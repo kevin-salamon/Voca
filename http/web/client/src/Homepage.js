@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
 import SearchForm from "./components/searchForm"
-import { saveJob, getSavedJobs, removeJob } from "./utils/API";
+import { getSavedJobs, removeJob } from "./utils/API";
 import JobModal from "./components/JobModal";
 import JobRow from "./components/JobRow.js";
 import DatePicker from 'react-date-picker';
@@ -20,6 +20,7 @@ class Homepage extends React.Component {
     this.handleGetSavedJobs();
     // console.log("state"+this.state.jobList)
   }
+
 
   handleGetSavedJobs = () => {
     getSavedJobs().then((resp) => {
@@ -101,6 +102,7 @@ class Homepage extends React.Component {
                     followup={job.followDate}
                     onChange={this.onChange}
                     date={this.state.date}
+                    handleRemoveJob={this.handleRemoveJob}
                   />
                 );
               })

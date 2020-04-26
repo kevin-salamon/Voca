@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import "../style.css";
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import { saveJob, getSavedJobs } from "../utils/API";
 
 function JobModal(props) {
@@ -26,7 +25,7 @@ function JobModal(props) {
           note: noteRef.current.value
       };
 
-      console.log(newJob); //refs seem to be working fine, this object is created correctly
+      console.log(newJob); 
       saveJob(newJob)
           .then(res => {
               console.log(res)
