@@ -18,12 +18,14 @@ export const getSavedJobs = () => {
 }
 
 export const removeJob = jobId => {
-  console.log("Attepting to remove data from below route:");
+  console.log("Attempting to remove data from below route:");
   return axios.delete(FLASK_BASE_URI + `/api/jobs/${jobId}`);
 }
+
 
 export default {
   saveJob,
   getSavedJobs,
   removeJob,
+  updateJob
 }

@@ -33,7 +33,6 @@ function JobModal(props) {
             });
         
         handleClose();
-
         //   alert("Job Added");
     }
 
