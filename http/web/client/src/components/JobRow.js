@@ -17,7 +17,7 @@ const JobRow = (props) => {
                 value={props.date}
             />
             <div className="remove-row">
-                <button className="remove-button" onClick={() => props.handleRemoveJob(props.key)}>X</button>
+                <button className="remove-button" onClick={() => props.handleRemoveJob(props.id)}>X</button>
             </div>
         </div>
     );
