@@ -16,7 +16,8 @@ const JobRow = (props) => {
         props.handleUpdateJob(props.id,newJobStatus)
     }
     let diff = 0;
-    let nowDate = new Date()
+    let nowDate = new Date();
+    let color = "";
     function calcDate(importDate){
 
         // let tempDate = JSON.stringify(importDate)
@@ -25,12 +26,22 @@ const JobRow = (props) => {
         console.log("nowDate: ",nowDate.getTime())
         diff = Math.floor((transDate.getTime() - nowDate.getTime())/1000/60/60/24)
         console.log("diff: ",diff)
+        if (diff > 7){
+            color = "lightskyblue"
+        }else if(diff > 2 && diff <= 7){
+            color = "green"
+        }else if (diff <= 2 && diff >= 0){
+            color = "red"
+        }else{
+            color = "gray"
+        }
+        console.log("color: ", color)
     }
     calcDate(props.followup)
     // console.log("date: ",props.date)
     // console.log("followup: ",new Date(props.followup))
     return (
-        <div className="job-row">
+        <div className="job-row" style={{ backgroundColor: color }}>
             <h3 className="job-title">{props.title}</h3>
             <h3 className="job-item">{props.employer}</h3>
             <h3 className="job-item">{props.location}</h3>
