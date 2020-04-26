@@ -46,14 +46,14 @@ const JobRow = (props) => {
             <h3 className="job-title">{props.title}</h3>
             <h3 className="job-item">{props.employer}</h3>
             <h3 className="job-item">{props.location}</h3>
-            <h3 className="job-notes">
+            {/* <h3 className="job-notes"> */}
                 <NoteModal
                     key = {props.id}
                     id = {props.id}
                     notes = {props.notes}
                     handleUpdateJob={props.handleUpdateJob}
                 />
-            </h3>
+            {/* </h3> */}
             {/* <h3 className="job-notes">{props.notes}</h3> */}
             <DatePicker
                 className="job-end"

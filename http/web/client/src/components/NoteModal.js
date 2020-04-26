@@ -36,13 +36,19 @@ function JobModal(props) {
     return (
         <>
             {props.notes ? (
-                <p variant="primary" onClick={handleShow}>
+                <h3 className="job-notes" variant="primary" onClick={handleShow}>
                     {props.notes}
-                </p>
+                </h3>
             ) : (
+<<<<<<< HEAD
                     <p variant="primary" onClick={handleShow}>
                         Add a new note here:
                     </p>
+=======
+                    <h3 className="job-notes" variant="primary" onClick={handleShow}>
+                        Add a new note here
+                    </h3>
+>>>>>>> master
                 )}
             <p variant="primary" onClick={handleShow}>
 
