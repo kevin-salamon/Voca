@@ -23,9 +23,12 @@ class Homepage extends React.Component {
 
 
   handleGetSavedJobs = () => {
+    console.log("handleGetSavedJobs:")
     getSavedJobs().then((resp) => {
+      console.log("getSavedJobs:" + resp)
       // this.setState({ jobList: resp.data })
       this.setState({ toBeSearched: resp.data })
+      console.log("new state:" + this.state.toBeSearched)
     }).catch(err => console.log(err));
   }
 
@@ -76,7 +79,9 @@ class Homepage extends React.Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
           />
-          <JobModal />
+          <JobModal 
+            handleGetSavedJobs={this.handleGetSavedJobs}
+          />
         </nav>
         <div className="state-holder">
           <p className="state-title">TITLE</p>
