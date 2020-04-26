@@ -18,8 +18,7 @@ def savejobs():
 
 @app.route('/api/jobs/<string:job_id', methods=['PUT'])
 def updateJob(job_id):
-    job_app = JobApplication(**json.loads(request.data))
-    db_response = database.updateJob(job_id, job_app)
+    db_response = database.updateJob(job_id, json.loads(request.data))
     return jsonify({'success': db_response[0]})
 
 @app.route('/api/jobs', methods=['GET'])

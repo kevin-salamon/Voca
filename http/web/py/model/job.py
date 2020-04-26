@@ -1,6 +1,6 @@
 from typing import Collection
 from dataclasses import dataclass, asdict
-from datetime import datetime
+from datetime import datetime, date
 
 @dataclass
 class Event:
@@ -20,7 +20,7 @@ class JobApplication:
     location: str = ""
     stage: str = "waiting"
     note: str = ""
-    followDate: str = ""
+    followDate: str = date.today().__str__()
     dates: Collection[Event] = tuple()
 
     def to_dict(self):
