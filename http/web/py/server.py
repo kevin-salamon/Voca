@@ -1,29 +1,31 @@
 import json
-import atexit
-from multiprocessing import Process
+import datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from .model import sms
+from celery import Celery
+from .model import sms, database
 from .model.job import JobApplication
 from .model.helper import EnhancedJSONEncoder
-
-background = Process(target=sms.smsDaemon)
-
-def close_running_threads():
-    background.join()
-    print("closing thread")
-atexit.register(close_running_threads)
-background.start()
-
-from .model import database
 
 app = Flask(__name__)
 CORS(app)
 app.json_encoder = EnhancedJSONEncoder
+app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
+app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
+
+celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+celery.conf.update(app.config)
+
+sendSMSDelayed = celery.task(sms.sendSMSFor)
+def asyncJobReminder(jobJSON: JobApplication):
+    #reminderTime = datetime.datetime.strptime(job.followupDate, "%d/%m/%y") - datetime.timedelta(days=1)
+    #secondsUntilNotification = (reminderTime - datetime.datetime.now()).total_seconds()
+    sendSMSDelayed.apply_async(args=(str(jobJSON),), countdown=10)
 
 @app.route('/api/jobs', methods=['POST'])
 def savejobs():
     d = JobApplication(**json.loads(request.data))
+    asyncJobReminder(request.data)
     db_response = database.storeJob(d)
     return jsonify({'success': db_response[0],
                     'job_id': db_response[1]})
@@ -34,4 +36,5 @@ def getJobs():
 
 @app.route('/api/jobs/<int:job_id>', methods=['DELETE'])
 def deleteJob(job_id):
-    return database.deleteJob(job_id)
+    # TODO: Delete this job application off the reminder queue in redis
+    return jsonify(database.deleteJob(job_id))

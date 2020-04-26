@@ -22,7 +22,7 @@ function JobModal(props) {
           title: titleRef.current.value,
           employer: employerRef.current.value,
           location: locationRef.current.value,
-          followDate: followUpRef.current.value,
+          followupDate: followUpRef.current.value,
           note: noteRef.current.value
       };
 

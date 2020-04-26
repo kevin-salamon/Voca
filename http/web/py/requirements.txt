@@ -3,3 +3,5 @@ Flask-Cors==3.0.8
 pymongo==3.10.1
 dnspython==1.16.0
 pause==0.2
+redis==3.4.1
+celery==4.4.2

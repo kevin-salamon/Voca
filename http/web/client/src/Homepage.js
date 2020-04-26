@@ -49,7 +49,7 @@ class Homepage extends React.Component {
                                 employer={job.employer}
                                 location={job.location}
                                 notes={job.note}
-                                followup={job.followDate}
+                                followup={job.followupDate}
                                 />
                             );
                         })

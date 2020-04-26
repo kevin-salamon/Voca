@@ -1,19 +1,10 @@
 import pause
 import pymongo
 import datetime
+import json
+from .job import JobApplication
+from .helper import EnhancedJSONEncoder
 
-def sendSMSFor(job):
+def sendSMSFor(jobJSON):
+    job = JobApplication(**json.loads(jobJSON, cls=EnhancedJSONEncoder))
     print("Follow up with", job.title, job.employer)
-
-def smsDaemon():
-    ''' Every hour, check if a job application reminder occurs in the next hour
-    if so, send the SMS reminder.
-    '''
-    from .database import getFollowUpsTomorrow
-    while True:
-        print("Doing stuff")
-        for job in getFollowUpsTomorrow():
-            sendSMSFor(job)
-        print("Continuing doing stuff")
-        tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
-        pause.until(tomorrow)

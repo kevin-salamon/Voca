@@ -22,7 +22,7 @@ def storeJob(job_application):
 def getJobs():
     return list(db.find())
 
-def deleteJob(db, job_id):
+def deleteJob(job_id):
     result = db.restaurants.delete_many({"_id": ObjectId(job_id)})
     return result
 
