@@ -21,7 +21,6 @@ function JobModal(props) {
             title: titleRef.current.value,
             employer: employerRef.current.value,
             location: locationRef.current.value,
-            followDate: followUpRef.current.value,
             note: noteRef.current.value
         };
 
@@ -72,14 +71,7 @@ function JobModal(props) {
                                 placeholder="Location"
                             />
                         </div>
-                        <div className="form-group text-center">
-                            <input
-                                className="input"
-                                ref={followUpRef}
-                                type="text"
-                                placeholder="Follow-Up Date"
-                            />
-                        </div>
+                        
                         <div className="form-group text-center">
                             <input
                                 className="input"
