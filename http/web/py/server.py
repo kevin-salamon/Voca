@@ -11,10 +11,16 @@ app.json_encoder = EnhancedJSONEncoder
 
 @app.route('/api/jobs', methods=['POST'])
 def savejobs():
-    d = JobApplication(**json.loads(request.data))
-    db_response = database.storeJob(d)
+    job_app = JobApplication(**json.loads(request.data))
+    db_response = database.storeJob(job_app)
     return jsonify({'success': db_response[0],
                     'job_id': db_response[1]})
+
+@app.route('/api/jobs/<string:job_id', methods=['PUT'])
+def updateJob(job_id):
+    job_app = JobApplication(**json.loads(request.data))
+    db_response = database.updateJob(job_id, job_app)
+    return jsonify({'success': db_response[0]})
 
 @app.route('/api/jobs', methods=['GET'])
 def getJobs():
