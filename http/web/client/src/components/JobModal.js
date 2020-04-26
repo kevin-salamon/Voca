@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import "../style.css";
 import Modal from 'react-bootstrap/Modal';
-import { saveJob, getSavedJobs } from "../utils/API";
+import { saveJob } from "../utils/API";
 
 function JobModal(props) {
     const [show, setShow] = useState(false);
@@ -32,8 +32,8 @@ function JobModal(props) {
           });
       
       handleClose();
-      // props.getSavedJobs();
-      alert("Job Added");
+      props.handleGetSavedJobs();
+    //   alert("Job Added");
   }
   
     return (
