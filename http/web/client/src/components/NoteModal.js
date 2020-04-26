@@ -5,6 +5,10 @@ import { saveJob } from "../utils/API";
 
 function JobModal(props) {
     const [show, setShow] = useState(false);
+    const [notes, setnotes] = useState({
+        notes: props.notes
+      })
+  
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -22,6 +26,11 @@ function JobModal(props) {
 
         handleClose();
         //   alert("Job Added");
+    }
+
+    function handleInputChange(event){
+        const { value } = event.target;
+        setnotes({...notes,[notes]: value})
     }
 
     return (
@@ -50,7 +59,8 @@ function JobModal(props) {
                                 className="input"
                                 ref={noteRef}
                                 type="text"
-                                placeholder="Job Title"
+                                // value={props.notes}
+                                // onChange={handleInputChange}
                                 style={{ width: "70%", height: "150px" }}
                             />
                         </div>
