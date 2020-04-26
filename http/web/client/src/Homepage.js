@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
 import SearchForm from "./components/searchForm"
-import { getSavedJobs, removeJob } from "./utils/API";
+import { getSavedJobs, removeJob, updateJob } from "./utils/API";
 import JobModal from "./components/JobModal";
 import JobRow from "./components/JobRow.js";
 import DatePicker from 'react-date-picker';
@@ -35,6 +35,11 @@ class Homepage extends React.Component {
   handleRemoveJob = jobId => {
     removeJob(jobId).then(this.handleGetSavedJobs).catch(err => console.log(err));
   }
+  handleUpdateJob = (JobId, newJobStatus) => {
+    updateJob(JobId, newJobStatus)
+      .then(this.handleGetSavedJobs)
+      .catch(err => console.log(err));
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -65,6 +70,8 @@ class Homepage extends React.Component {
     this.setState({ date: date })
   }
 
+
+
   render() {
     console.log(this.state)
     return (
@@ -79,7 +86,7 @@ class Homepage extends React.Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
           />
-          <JobModal 
+          <JobModal
             handleGetSavedJobs={this.handleGetSavedJobs}
           />
         </nav>
