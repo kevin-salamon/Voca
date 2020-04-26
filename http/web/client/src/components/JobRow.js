@@ -11,12 +11,14 @@ const JobRow = (props) => {
             <h3 className="job-item">{props.employer}</h3>
             <h3 className="job-item">{props.location}</h3>
             <h3 className="job-notes">{props.notes}</h3>
-
             <DatePicker
+                className="job-end"
                 onChange={props.onChange}
                 value={props.date}
             />
-
+            <div className="remove-row">
+                <button className="remove-button" onClick={removeJob}>X</button>
+            </div>
         </div>
     );
 }

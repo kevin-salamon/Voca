@@ -45,13 +45,12 @@ function JobModal(props) {
   
         <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title style={{fontFamily: "monospace", fontSize: "30px"}}>Add Job:</Modal.Title>
+                    <Modal.Title className="modal-title">Add your new job application details below</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{backgroundColor: "rgb(255, 179, 38)"}}>
                     <form>
                         <div className="form-group text-center">
                             <input
-                                style={{ marginTop: "5%" }}
                                 className="input"
                                 ref={titleRef}
                                 type="text"
@@ -60,7 +59,6 @@ function JobModal(props) {
                         </div>
                         <div className="form-group text-center">
                             <input
-                                style={{ marginBottom: "5%" }}
                                 className="input"
                                 ref={employerRef}
                                 type="text"
@@ -69,7 +67,6 @@ function JobModal(props) {
                         </div>
                         <div className="form-group text-center">
                             <input
-                                style={{ marginBottom: "5%" }}
                                 className="input"
                                 ref={locationRef}
                                 type="text"
@@ -78,7 +75,6 @@ function JobModal(props) {
                         </div>
                         <div className="form-group text-center">
                             <input
-                                style={{ marginBottom: "5%" }}
                                 className="input"
                                 ref={followUpRef}
                                 type="text"
@@ -87,7 +83,6 @@ function JobModal(props) {
                         </div>
                         <div className="form-group text-center">
                             <input
-                                style={{ marginBottom: "5%" }}
                                 className="input"
                                 ref={noteRef}
                                 type="text"
@@ -98,9 +93,9 @@ function JobModal(props) {
 
                 </Modal.Body>
                 <Modal.Footer className="text-center">
-                    <Button variant="primary" style={{margin: "0 auto"}} onClick={handleSubmit}>
+                    <button variant="primary" className="job-button-small" onClick={handleSubmit}>
                         Add Job
-                    </Button>
+                    </button>
 
                 </Modal.Footer>
             </Modal>

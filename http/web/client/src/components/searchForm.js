@@ -8,7 +8,7 @@ function SearchForm(props) {
                 value={props.search}
                 onChange={props.handleInputChange}
                 type="text"
-                placeholder="Search"
+                placeholder="Search Title"
             />
             <button className="reset-button" onClick={props.handleFormSubmit}>Reset</button>
         </form>
