@@ -82,6 +82,37 @@ body {
     border: 5px solid rgb(255, 179, 38);
 }
 
+.job-button-small {
+    height: 50px;
+    width: 150px;
+    border-radius: 15px;
+    border: 5px solid rgb(255, 179, 38);
+    color: rgb(255, 179, 38);
+    background-color: white;
+    letter-spacing: 0.05em;
+    font-size: 1.5em;
+    font-family: 'Bebas Neue', cursive;
+    margin: 0 auto;
+}
+
+.modal-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8em;
+    margin: 0 auto;
+    color: orange;
+    text-decoration: underline;
+    margin-left: 2%;
+}
+
+.input {
+    width: 300px;
+    height: 30px;
+    margin: 1%;
+    border-radius: 5px;
+    text-align: center;
+    color: silver;
+}
+
 .state-holder {
     width: 100%;
     height: 50px;
@@ -151,7 +182,8 @@ body {
     overflow: auto;
     height: 700px;
     justify-content: center;
-    margin: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     border-radius: 5px;
     text-align: center;
     background-color: white;
@@ -171,8 +203,10 @@ body {
     margin: 2%;
     align-items: center;
     transition: all 0.40s ease;
-    background-color: rgb(247, 189, 114);
+    background-color: darkgray;
     color: white;
+    border-radius: 5px;
+    border: 4px solid black;
 }
 
 .job-item {
@@ -212,6 +246,7 @@ body {
     height: 90%;
     color: white;
     border: 4px solid white;
+    border-left: 8px solid white;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -225,8 +260,7 @@ body {
 .job-end {
     font-size: 1.5em;
     letter-spacing: 0.0625em;
-    margin-right: 0.5%;
-    width: 20%;
+    width: 15%;
     height: 90%;
     border: 4px solid white;
     color: white;
@@ -236,4 +270,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.remove-row {
+    font-size: 1.5em;
+    letter-spacing: 0.0625em;
+    margin-right: 0.5%;
+    width: 5%;
+    height: 90%;
+    border: 4px solid white;
+    border-right: 8px solid white;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-button {
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    color: white;
+    background-color: red;
+    font-family: 'Bebas Neue', cursive;
 }
