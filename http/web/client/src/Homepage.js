@@ -4,7 +4,6 @@ import SearchForm from "./components/searchForm"
 import { getSavedJobs, removeJob, updateJob } from "./utils/API";
 import JobModal from "./components/JobModal";
 import JobRow from "./components/JobRow.js";
-import DatePicker from 'react-date-picker';
 
 
 class Homepage extends React.Component {
@@ -13,7 +12,7 @@ class Homepage extends React.Component {
     // jobList: [],
     searched: "",
     toBeSearched: [],
-    date: new Date()
+    // date: new Date()
   }
 
   componentDidMount() {
@@ -25,7 +24,7 @@ class Homepage extends React.Component {
   handleGetSavedJobs = () => {
     console.log("handleGetSavedJobs:")
     getSavedJobs().then((resp) => {
-      console.log("getSavedJobs:" + resp.data.length)
+      // console.log("getSavedJobs:" + resp.data.length)
       // this.setState({ jobList: resp.data })
       this.setState({ toBeSearched: resp.data })
       // console.log("new state:" + this.state.toBeSearched)
@@ -37,9 +36,24 @@ class Homepage extends React.Component {
   }
   
   handleUpdateJob = (JobId, newJobStatus) => {
+    console.log("JobId: ",JobId)
+    console.log("newJobStatus: ",newJobStatus)
     updateJob(JobId, newJobStatus)
       .then(this.handleGetSavedJobs)
       .catch(err => console.log(err));
+  }
+
+  // onChange = jobId => {
+  //   console.log("Jobid: ",jobId)
+  //   selectedDateId = jobId;
+  // }
+
+  // onSelect = date => {
+  //   console.log("onSelect date: ",date)
+  // }
+  onChange = date => {
+    console.log("onchange date: ",date)
+    this.setState({ date: date })
   }
 
   handleFormSubmit = event => {
@@ -66,10 +80,7 @@ class Homepage extends React.Component {
     });
     // }
   };
-  onChange = date => {
 
-    this.setState({ date: date })
-  }
 
 
 
@@ -117,8 +128,7 @@ class Homepage extends React.Component {
                     location={job.location}
                     notes={job.note}
                     followup={job.followDate}
-                    onChange={this.onChange}
-                    date={this.state.date}
+                    handleUpdateJob={this.handleUpdateJob}
                     handleRemoveJob={this.handleRemoveJob}
                   />
                 );

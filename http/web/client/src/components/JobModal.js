@@ -70,6 +70,7 @@ function JobModal(props) {
                                 placeholder="Location"
                             />
                         </div>
+
                         <div className="form-group text-center">
                             <input
                                 className="input"
