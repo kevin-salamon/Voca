@@ -22,5 +22,5 @@ def getJobs():
     return list(db.find())
 
 def deleteJob(job_id):
-    result = db.restaurants.delete_many({"_id": ObjectId(job_id)})
+    result = db.delete_many({"_id": ObjectId(job_id)})
     return result

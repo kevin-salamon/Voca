@@ -20,6 +20,7 @@ def savejobs():
 def getJobs():
     return jsonify(database.getJobs())
 
-@app.route('/api/jobs/<int:job_id>', methods=['DELETE'])
+@app.route('/api/jobs/<string:job_id>', methods=['DELETE'])
 def deleteJob(job_id):
-    return database.deleteJob(job_id)
+    r = database.deleteJob(job_id)
+    return jsonify({'acknowledged': r.acknowledged})
