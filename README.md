@@ -1,4 +1,6 @@
 # Voca
+![Logo, a stylized V in an orange circle](https://drive.google.com/file/d/1lQwVYqv39dCXdJYRKkqX7F4z92n1GaYh/view?usp=sharing)
+
 An application for the hack:now hackathon.
 
 ## Project Description 
