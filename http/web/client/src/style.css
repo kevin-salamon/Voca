@@ -162,7 +162,7 @@ body {
 .state-note {
     font-size: 2em;
     letter-spacing: 0.0625em;
-    width: 27.5%;
+    width: 29%;
     height: 90%;
     color: white;
     border-right: 8px solid white;
@@ -175,7 +175,7 @@ body {
 .state-followup {
     font-size: 1.7em;
     letter-spacing: 0.0625em;
-    width: 18%;
+    width: 13%;
     height: 90%;
     color: white;
     border-right: 8px solid white;
@@ -247,6 +247,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.job-notes:hover {
+    background-color: navy;
 }
 
 .job-title {

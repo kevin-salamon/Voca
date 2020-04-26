@@ -50,7 +50,7 @@ function JobModal(props) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title className="modal-title">Add your node here!</Modal.Title>
+                    <Modal.Title className="modal-title" style={{marginLeft: "29%"}}>Add your note here!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "rgb(255, 179, 38)" }}>
                     <form>
@@ -69,7 +69,7 @@ function JobModal(props) {
                 </Modal.Body>
                 <Modal.Footer className="text-center">
                     <button variant="primary" className="job-button-small" onClick={handleSubmit}>
-                        Add Job
+                        Change Note
                     </button>
 
                 </Modal.Footer>

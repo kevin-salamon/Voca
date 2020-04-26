@@ -28,7 +28,7 @@ const JobRow = (props) => {
         diff = Math.floor((transDate.getTime() - nowDate.getTime()) / 1000 / 60 / 60 / 24)
         console.log("diff: ", diff)
         if (diff > 7) {
-            color = "lightskyblue"
+            color = "#038cfc"
         } else if (diff > 2 && diff <= 7) {
             color = "green"
         } else if (diff <= 2 && diff >= 0) {
