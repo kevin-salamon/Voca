@@ -1,5 +1,5 @@
 # Voca
-![Logo, a stylized V in an orange circle](https://github.com/kevin-salamon/Voca/blob/Readme/android-chrome-192x192.png)
+![Logo, a stylized V in an orange circle](https://github.com/kevin-salamon/Voca/blob/master/android-chrome-192x192.png)
 
 An application for the hack:now hackathon.
 
