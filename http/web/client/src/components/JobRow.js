@@ -6,7 +6,7 @@ import DatePicker from 'react-date-picker';
 const JobRow = (props) => {
 
     function onChange(date) {
-        console.log("onchange date: ", date)
+        // console.log("onchange date: ", date)
         let tempDate = JSON.stringify(date)
         let transDate = tempDate.slice(0,11)
         let newJobStatus = {
@@ -15,7 +15,18 @@ const JobRow = (props) => {
         console.log("newJobStatus: ", newJobStatus)
         props.handleUpdateJob(props.id,newJobStatus)
     }
+    let diff = 0;
+    let nowDate = new Date()
+    function calcDate(importDate){
 
+        // let tempDate = JSON.stringify(importDate)
+        let transDate = new Date(importDate)
+        console.log("transDate: ",transDate)
+        console.log("nowDate: ",nowDate.getDate())
+        diff = transDate.getDate() - nowDate.getDate()
+        console.log("diff: ",diff)
+    }
+    calcDate(props.followup)
     // console.log("date: ",props.date)
     // console.log("followup: ",new Date(props.followup))
     return (
