@@ -134,6 +134,11 @@ body {
     align-self: center;
     justify-content: center;
     background-color: transparent;
+    transition: all 0.75s ease;
+}
+
+.state-title:hover {
+    color: navy;
 }
 
 .state-item {
@@ -147,6 +152,11 @@ body {
     align-self: center;
     justify-content: center;
     background-color: transparent;
+    transition: all 0.75s ease;
+}
+
+.state-item:hover {
+    color: navy;
 }
 
 .state-note {

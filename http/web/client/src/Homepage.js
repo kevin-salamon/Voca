@@ -20,6 +20,29 @@ class Homepage extends React.Component {
     // console.log("state"+this.state.jobList)
   }
 
+  sortAlgoTitle = (arr) => {
+    return arr.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1);
+  }
+
+  sortByTitle = () => {
+    this.setState({ toBeSearched: this.sortAlgoTitle(this.state.toBeSearched)});
+  }
+
+  sortAlgoEmployer = (arr) => {
+    return arr.sort((a, b) => a.employer.toLowerCase() > b.employer.toLowerCase() ? 1 : -1);
+  }
+
+  sortByEmployer = () => {
+    this.setState({ toBeSearched: this.sortAlgoEmployer(this.state.toBeSearched)});
+  }
+
+  sortAlgoLocation = (arr) => {
+    return arr.sort((a, b) => a.location.toLowerCase() > b.location.toLowerCase() ? 1 : -1);
+  }
+
+  sortByLocation = () => {
+    this.setState({ toBeSearched: this.sortAlgoLocation(this.state.toBeSearched)});
+  }
 
   handleGetSavedJobs = () => {
     console.log("handleGetSavedJobs:")
@@ -105,9 +128,9 @@ class Homepage extends React.Component {
           </div>
         </nav>
         <div className="state-holder">
-          <p className="state-title">TITLE</p>
-          <p className="state-item">EMPLOYER</p>
-          <p className="state-item">LOCATION</p>
+          <p className="state-title" onClick={this.sortByTitle}>TITLE</p>
+          <p className="state-item" onClick={this.sortByEmployer}>EMPLOYER</p>
+          <p className="state-item" onClick={this.sortByLocation}>LOCATION</p>
           <p className="state-note">NOTES</p>
           <p className="state-followup">FOLLOW-UP</p>
         </div>
