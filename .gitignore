@@ -2,3 +2,6 @@
 *.pyo
 .vscode
 venv
+
+node_modules
+package-lock.JSON
