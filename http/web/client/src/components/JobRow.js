@@ -38,8 +38,8 @@ const JobRow = (props) => {
         }
         console.log("color: ", color)
     }
+    console.log("date: ",props.followup)
     calcDate(props.followup)
-    // console.log("date: ",props.date)
     // console.log("followup: ",new Date(props.followup))
     return (
         <div className="job-row" style={{ backgroundColor: color }}>
