@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+var moment = require('moment');
+let today = moment
 
 const jobSchema = new Schema({
     title: {
@@ -15,7 +17,8 @@ const jobSchema = new Schema({
         type: String
     },
     followUp: {
-        type: Date
+        type: Date,
+        default: Date.now()
     }
 });
 
